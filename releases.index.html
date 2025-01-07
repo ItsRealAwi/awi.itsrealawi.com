@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awi Releases</title>
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        .app-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .app-card div {
+            background-color: #f9f9f9;
+            border: 1px solid #ff0000;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .app-card div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .app-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .app-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .app-card p {
+            font-size: 14px;
+            color: #555;
+        }
+
+    </style>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        function downloadFile(path) {
+            window.location.href = path;
+        }
+    </script>
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="window.location.href='index.html'">Back</button>
+    </div>
+
+    <h1>Krasha</h1>
+
+    <div class="app-card" style="cursor: pointer;">
+        <div onclick="downloadFile('pls/Krasha/1.0.0/KrashaInstaller.exe')"> <!-- 1.0.0 -->
+            <h1>1.0.0</h1>
+        </div>
+    </div>
+
+    <h1>Axium</h1>
+
+    <div class="app-card" style="cursor: pointer;">
+        <div onclick="downloadFile('pls/Axium/1.0.0/AxiumInstaller.exe')"> <!-- 1.0.0 -->
+            <h1>1.0.0</h1>
+        </div>
+    </div>
+
+    <h1>Vortax</h1>
+
+    <div class="app-card" style="cursor: pointer;">
+        <div onclick="downloadFile('pls/Vortax/1.0.0/VortaxInstaller.exe')"> <!-- 1.0.0 -->
+            <h1>1.0.0</h1>
+        </div>
+    </div>
+
+    <h1>Xyron</h1>
+
+    <div class="app-card" style="cursor: pointer;">
+        <div onclick="downloadFile('pls/Xyron/1.0.0/XyronInstaller.exe')"> <!-- 1.0.0 -->
+            <h1>1.0.0</h1>
+        </div>
+    </div>
+
+    <h1>AwiApp</h1>
+
+    <div class="app-card" style="cursor: pointer;">
+        <div onclick="downloadFile('apps/awi/1.0.0/AwiInstaller.exe')"> <!-- 1.0.0 -->
+            <h1>1.0.0</h1>
+        </div>
+    </div>
+
+    <h1>CInfinity</h1>
+
+    <div class="app-card" style="cursor: pointer;">
+        <div onclick="downloadFile('frameworks/cinfinity/1.0.0/CInfinityInstaller.exe')"> <!-- 1.0.0 -->
+            <h1>1.0.0</h1>
+        </div>
+    </div>
+
+    <h1>PyInfinity</h1>
+
+    <div class="app-card" style="cursor: pointer;">
+        <div onclick="downloadFile('frameworks/pyinfinity/1.0.0/PyInfinityInstaller.exe')"> <!-- 1.0.0 -->
+            <h1>1.0.0</h1>
+        </div>
+    </div>
+</body>
+</html>

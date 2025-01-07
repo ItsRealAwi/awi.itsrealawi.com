@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awi Community</title>
+
+    <style>
+        body {
+            margin: 20px;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+
+        .human-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .human-card div {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 220px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .human-card div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .human-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .human-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .human-card p {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="window.location.href='index.html'">Back</button>
+    </div>
+
+    <h1>Awi Community</h1>
+
+    <div class="human-card" id="human-cards">
+        <!-- Участники будут добавлены динамически -->
+    </div>
+
+    <script>
+        // Данные участников
+        const participants = [
+            {
+                name: "Matvey Kostenko",
+                role: [
+                    "Awi Developer", 
+                    "Awi Creator", 
+                    "Creator Of This Site",
+                ],
+                birthday: new Date(2012, 3, 14), // 14 апреля 2012 года
+                image: "humans/MatveiKostenko.jpg"
+            },
+            {
+                name: "Denis Gutsulyak",
+                role: [
+                    "Developer", 
+                    "Python Project Creator",
+                ],
+                birthday: new Date(2008, 8, 18), // 14 апреля 2012 года
+                image: "humans/DenysHutsuliak.jpg"
+            },
+        ];
+
+        // Функция для расчёта возраста
+        function calculateAge(dateOfBirth) {
+            const today = new Date();
+            let age = today.getFullYear() - dateOfBirth.getFullYear();
+            const monthDiff = today.getMonth() - dateOfBirth.getMonth();
+            const dayDiff = today.getDate() - dateOfBirth.getDate();
+
+            if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+                age--;
+            }
+            return age;
+        }
+
+        // Генерация HTML для участников
+        function renderParticipants() {
+            const container = document.getElementById('human-cards');
+            container.innerHTML = ""; // Очищаем контейнер перед добавлением
+
+            participants.forEach(participant => {
+                const age = calculateAge(participant.birthday);
+
+                const participantHTML = `
+                    <div>
+                        <img src="${participant.image}" alt="${participant.name}">
+                        ${participant.role.map(role => `<h2>${role}</h2>`).join('')}
+                        <p>${participant.name}</p>
+                        <p>Age: ${age}</p>
+                        <p>Birthday: ${participant.birthday.toLocaleString('en-US', { month: 'long', day: 'numeric' })}</p>
+                    </div>
+                `;
+
+                container.innerHTML += participantHTML;
+            });
+        }
+
+        // Вызов функции для отрисовки участников
+        renderParticipants();
+    </script>
+
+</body>
+</html>

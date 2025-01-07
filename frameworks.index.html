@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awi Frameworks</title>
+    <link rel="stylesheet" href="applications.index.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="window.location.href='index.html'">Back</button>
+    </div>
+
+    <h1 style="text-align: center;">Frameworks</h1>
+    
+    <div id="app-container" class="app-card">
+        <!-- Картки додатків будуть додані тут -->
+    </div>
+
+    <script>
+        // Дані для додатків
+        const apps = [
+            {
+                name: "",
+                size: "0 MB",
+                description: "",
+                icon: "frameworks/ /icon.ico",
+                link: "frameworks/ /downloader.html",
+            },
+        ];
+
+        const appContainer = document.getElementById('app-container');
+
+        // Генерація карток
+        apps.forEach(app => {
+            const card = document.createElement('div');
+            card.innerHTML = `
+                <img src="${app.icon}" alt="${app.name}">
+                <h2>${app.name}</h2>
+                <p>Size: ${app.size}</p>
+                <p>${app.description}</p>
+            `;
+            card.addEventListener('click', () => {
+                window.location.href = app.link;
+            });
+            appContainer.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>

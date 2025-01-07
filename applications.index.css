@@ -1,0 +1,44 @@
+body {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    text-align: center;
+}
+
+.app-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+.app-card div {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.app-card div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+.app-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.app-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+.app-card p {
+    font-size: 14px;
+    color: #555;
+}
